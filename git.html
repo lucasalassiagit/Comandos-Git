@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comandos Git</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+        <h3 class="text-center">Indice</h3>
+      
+      <h4 class="mt-4 mb-3 text-primary fw-bold">Comandos Git</h4>
+      <div class="list-group list-group-flush">
+        <a
+          href="#Introduccion" id = "volverIntroduccion"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>1. Introduccion</span>
+          <i class="bi bi-git text-muted"></i>
+          <!-- Icono opcional (necesita Bootstrap Icons) -->
+        </a>
+        
+        <a
+          href="#Restore"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>2. Remover archivos, Restore, Checkout, Reset</b></span>
+          <i class="bi bi-upload text-muted"></i>
+        </a>
+        
+        <a
+          href="#ModificarArchivos"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>3. Modificar archivos</span>
+          <i class="bi bi-download text-muted"></i>
+        </a>
+        
+        <a
+          href="#Diff"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>4. Git diff</span>
+          <i class="bi bi-globe text-muted"></i>
+        </a>
+        
+        <a
+          href="#Commit"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>5. Modificar y deshacer commit</span>
+          <i class="bi bi-diagram-2 text-muted"></i>
+        </a>
+        
+        <a
+          href="#"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>6. Ramas</span>
+          <i class="bi bi-code-square text-muted"></i>
+        </a>
+        
+        <a
+          href="#"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>7. Fusionar ramas</span>
+          <i class="bi bi-code-square text-muted"></i>
+        </a>
+        
+        <a
+          href="#"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>8. .gitignore</span>
+          <i class="bi bi-code-square text-muted"></i>
+        </a>
+        
+        <a
+          href="#"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>9. Alias</span>
+          <i class="bi bi-code-square text-muted"></i>
+        </a>
+        
+        <a
+          href="#"
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+        >
+          <span>10. Git reflog</span>
+          <i class="bi bi-code-square text-muted"></i>
+        </a>
+      </div>
+
+      <div class="container mt-4" id="Introduccion">
+        <h2 class="text-center text-primary">Introduccion</h2>
+  
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">¿Qué es un repositorio?</h3>
+          <p>
+            El repositorio es el área donde se guarda todo. Nos permite tener un
+            control del cambio de versiones.
+          </p>
+        </section>
+  
+        <section class="mt-9">
+          <h4 class="text-secondary">Áreas de Trabajo</h4>
+          <div class="list-group">
+            <div class="list-group-item">
+              <h5>1. Directorio de Trabajo (Working Directory)</h5>
+              <p>
+                Espacio donde trabajas con tus archivos locales. Aquí es donde
+                haces cambios en los archivos del proyecto.
+              </p>
+            </div>
+            <div class="list-group-item">
+              <h5>2. Área de Preparación (Staging Area)</h5>
+              <p>
+                Área intermedia donde preparas los archivos que deseas incluir en
+                el próximo commit.
+              </p>
+            </div>
+            <div class="list-group-item">
+              <h5>3. Repositorio Local (Local Repository)</h5>
+              <p>
+                Donde se almacenan todos los commits del proyecto. Contiene la
+                historia del proyecto y las ramas.
+              </p>
+            </div>
+          </div>
+        </section>
+  
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Comandos Básicos</h3>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>mkdir carpeta</code></td>
+                <td>Crear carpeta</td>
+              </tr>
+              <tr>
+                <td><code>rmdir carpeta</code></td>
+                <td>Eliminar carpeta</td>
+              </tr>
+              <tr>
+                <td><code>touch archivo.txt</code></td>
+                <td>Crear archivo</td>
+              </tr>
+              <tr>
+                <td><code>cd c:</code></td>
+                <td>Entrar a un disco</td>
+              </tr>
+              <tr>
+                <td><code>cd carpeta</code></td>
+                <td>Entrar a carpeta</td>
+              </tr>
+              <tr>
+                <td><code>cd ../</code></td>
+                <td>Salir de carpeta</td>
+              </tr>
+              <tr>
+                <td><code>ls</code></td>
+                <td>Ver archivos</td>
+              </tr>
+              <tr>
+                <td><code>ls -a</code></td>
+                <td>Ver archivos ocultos</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+  
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Uso de Git</h3>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git init</code></td>
+                <td>Inicializar git</td>
+              </tr>
+              <tr>
+                <td><code>$ git add Arch1.txt Arch2.txt</code></td>
+                <td>Subir archivo al area de preparacion</td>
+              </tr>
+              <tr>
+                <td><code>$ git rm --cached documento.txt</code></td>
+                <td>Para borrar un archivo del area de preparacion</td>
+              </tr>
+              <tr>
+                <td><code>$ git status -s</code></td>
+                <td>Informacion de archivos:
+                  <ul>
+                    <li>??: Archivo no rastreado</li>
+                    <li>A: Archivo agregado al area de preparacion</li>
+                    <li>M: Modificado</li>
+                    <li>D: Eliminado</li>
+                    <li style="color: red">D: En escritorio</li>
+                    <li style="color: green">D: En area de preparacion</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><code>$ git commit -m "Mensaje sobre commit"</code></td>
+                <td>Subir a area de preparacion</td>
+              </tr>
+              <tr>
+                <td><code>$ git commit (se abre VSC)</code></td>
+                <td>Subir a area de preparacion</td>
+              </tr>
+              <tr>
+                <td><code>$ git commit -a</code></td>
+                <td>Subir desde area de trabajo a repo local</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="text-end">
+          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      
+      
+      </div>
+
+      <br>
+
+      <hr class="border bg-primary w-90 mx-auto" style="height: 10px;">
+
+      <br>
+      
+      <div class="container mt-4" id="Restore">
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Remover archivos de un repositorio</h3>
+            <table class="table table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <th>Comando</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>$ rm archivo.txt</code></td>
+                  <td>Remover un archivo de un repositorio</td>
+                </tr>
+                <tr>
+                  <td><code>$ git add archivo.txt</code></td>
+                  <td>Agregar la eliminacion del archivo</td>
+                </tr>
+                <tr>
+                  <td><code>$ git commit -m "Elimine archivo" -a</code></td>
+                  <td>Documentar eliminacion</td>
+                </tr>
+              </tbody>
+            </table>
+            
+          
+        </section>
+      
+        <br>
+
+        <section class="mt-4">
+            
+            <h3 class="text-secondary text-center">Restore</h3>
+            
+            <h5>Devuelve un archivo eliminado del area de trabajo</h5>
+            
+            <table class="table table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <th>Comando</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>$ git restore archivo.txt</code></td>
+                  <td>Lo devuelve desde el area de preparacion</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>
+                      <ol>
+                        <li>$ git restore --staged archivo.txt</li>
+                        <li>$ git restore archivo.txt</li>
+                      </ol>
+                    </code>
+                  </td>
+                  <td>Si esta en el area de preparacion</td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+        
+        <br>
+
+        <section class="mt-4">
+            
+          <h3 class="text-secondary text-center">Checkout</h3>
+          
+          <h5>Restaura cambios realizados en el archivo desde el commit (no recomendado)</h5>
+          
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git checkout archivo.txt</code></td>
+                <td>Si no lo subi al area de preparacion</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br>
+
+        <section class="mt-4">
+            
+          <h3 class="text-secondary text-center">Reset</h3>
+          
+          <h5>Restaura el archivo hasta el ultimo commit subido</h5>
+          
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git reset --hard</code></td>
+                <td>Restaura archivo desde ulitmo commit</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <br>
+
+        <div class="text-end">
+          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      
+      
+      </div>
+
+      <br>
+
+      <hr class="border bg-primary w-90 mx-auto" style="height: 10px;">
+
+      <br>
+
+
+      <div class="container mt-4" id="ModificarArchivos">
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Modificar archivo</h3>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git mv nombreActual.txt nuevoNombre.txt</code></td>
+                <td>Cambiar nombre a un archivo</td>
+              </tr>
+              <tr>
+                <td><code>$ git checkout nombre_anterior.txt</code></td>
+                <td>Generar otro archivo con el nombre anterior</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <div class="text-end">
+          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      </div>
+      
+      <br />
+      
+      <hr class="border bg-primary w-90 mx-auto" style="height: 10px" />
+      
+      <br />
+
+      <div class="container mt-4" id="Diff">
+        <h3 class="text-secondary text-center">Git diff: sirve para comparar commits</h3>
+        <section class="mt-4">
+          <h5>Averiguar id de commits</h5>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git show archivo.txt</code></td>
+                <td>Busca info en el commit y me la muestra</td>
+              </tr>
+              <tr>
+                <td><code>$ git diff --staged</code></td>
+                <td>Comparacion entre commit y area de preparacion</td>
+              </tr>
+              <tr>
+                <td><code>$ git log</code></td>
+                <td>Id del commit</td>
+              </tr>
+              <tr>
+                <td><code>$ git log --oneline</code></td>
+                <td>Id del commit (muestra menos caracteres)</td>
+              </tr>
+              <tr>
+                <td><code>$ git log --all --oneline --graph</code></td>
+                <td>Id de los commit de todas las ramas</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>$ git config --global core.abbrev (cant. caracteres)</code>
+                </td>
+                <td>Configurar cant caracteres del id</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <section class="mt-4">
+          <h5>Comparacion de commits</h5>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git diff (id 1 commit) (id 2 commit)</code></td>
+                <td>Comparacion entre commits</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>$ git diff --name-only (id 1 commit) (id 2 commit)</code>
+                </td>
+                <td>Visualizar nombres de archivos que cambiaron</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>$ git diff --word-diff (id 1 commit) (id 2 commit)</code>
+                </td>
+                <td>Visualizar cambios dentro de un archivo</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+      
+        <div class="text-end">
+          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      </div>
+      
+      <br />
+      
+      <hr class="border bg-primary w-90 mx-auto" style="height: 10px" />
+      
+      <br />
+
+
+      <div class="container mt-4" id="Commit">
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">
+            Modificar el ultimo commit subido
+          </h3>
+          <h5 class="text-danger">PRECAUCION al usarlo en repos compartidos</h5>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git commit --amend</code></td>
+                <td>
+                  Modificar (en realidad se reemplaza por uno nuevo) la descripcion de
+                  un commit
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <ol>
+                    <li>Creo nuevo/s archivo/s</li>
+                    <li>Lo subo al area de preparacion</li>
+                    <li><code>$ git commit --amend</code></li>
+                  </ol>
+                </td>
+                <td>
+                  <ul>
+                    <li>Agrega la eliminacion del archivo</li>
+                    <li>Me incluye todos los archivos con un mismo id</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Deshacer un commit</h3>
+          <h4 class="text-center">
+            Lo primero es cambiar el puntero, para que apunte al ultimo commit que
+            quedara
+          </h4>
+      
+          <br />
+          
+          <h5>UTILIZANDO SOFT (borra del commit)</h5>
+      
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git reset --soft (id del commit)</code></td>
+                <td>Manda los commit "eliminados" al area de preparacion</td>
+              </tr>
+              <tr>
+                <td>
+                  <code
+                    >$ git reset --soft head~(numero de commit que me quiero
+                    posicionar)</code
+                  >
+                </td>
+                <td>
+                  Para posicionar el commit que desemos detras del que esta
+                  seleccionado
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      
+          <br />
+      
+          <h5>UTILIZANDO MIXED (limpia el area de preparacion)</h5>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git reset --mixed (id del commit)</code></td>
+                <td>
+                  Los archivos los eliminara del repo y area de preparacion, solo los
+                  deja en area de trabajo
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <h5>UTILIZANDO HARD (borra todos los cambios)</h5>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git reset --hard (id del commit)</code></td>
+                <td>
+                  Borra todos los cambios realizados en los commit posteriores al seleccionado
+                  por el puntero
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <div class="text-end">
+          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

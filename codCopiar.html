@@ -1,0 +1,128 @@
+<div class="container mt-4" id="Commit">
+  <section class="mt-4">
+    <h3 class="text-secondary text-center">
+      Modificar el ultimo commit subido
+    </h3>
+    <h5 class="text-danger">PRECAUCION al usarlo en repos compartidos</h5>
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Comando</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$ git commit --amend</code></td>
+          <td>
+            Modificar (en realidad se reemplaza por uno nuevo) la descripcion de
+            un commit
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ol>
+              <li>Creo nuevo/s archivo/s</li>
+              <li>Lo subo al area de preparacion</li>
+              <li><code>$ git commit --amend</code></li>
+            </ol>
+          </td>
+          <td>
+            <ul>
+              <li>Agrega la eliminacion del archivo</li>
+              <li>Me incluye todos los archivos con un mismo id</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <br />
+
+  <section class="mt-4">
+    <h3 class="text-secondary text-center">Deshacer un commit</h3>
+    <h4 class="text-center">
+      Lo primero es cambiar el puntero, para que apunte al ultimo commit que
+      quedara
+    </h4>
+
+    <h5>UTILIZANDO SOFT (borra del commit)</h5>
+
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Comando</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$ git reset --soft (id del commit)</code></td>
+          <td>Manda los commit "eliminados" al area de preparacion</td>
+        </tr>
+        <tr>
+          <td>
+            <code
+              >$ git reset --soft head~(numero de commit que me quiero
+              posicionar)</code
+            >
+          </td>
+          <td>
+            Para posicionar el commit que desemos detras del que esta
+            seleccionado
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+
+    <h5>UTILIZANDO MIXED (limpia el area de preparacion)</h5>
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Comando</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$ git reset --mixed (id del commit)</code></td>
+          <td>
+            Los archivos los eliminara del repo y area de preparacion, solo los
+            deja en area de trabajo
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <br />
+
+  <h5>UTILIZANDO HARD (borra todos los cambios)</h5>
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Comando</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$ git reset --hard (id del commit)</code></td>
+          <td>
+            Borra todos los cambios realizados en los commit posteriores al seleccionado
+            por el puntero
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <br />
+
+  <div class="text-end">
+    <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+<div class="container mt-4" id="Restore">
+  <section class="mt-4">
+    <h3 class="text-secondary text-center">
+      Remover archivos de un repositorio
+    </h3>
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Comando</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$ rm archivo.txt</code></td>
+          <td>Remover un archivo de un repositorio</td>
+        </tr>
+        <tr>
+          <td><code>$ git add archivo.txt</code></td>
+          <td>Agregar la eliminacion del archivo</td>
+        </tr>
+        <tr>
+          <td><code>$ git commit -m "Elimine archivo" -a</code></td>
+          <td>Documentar eliminacion</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <br />
+
+  <section class="mt-4">
+    <h3 class="text-secondary text-center">Restore</h3>
+
+    <h5>Devuelve un archivo eliminado del area de trabajo</h5>
+
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Comando</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$ git restore archivo.txt</code></td>
+          <td>Lo devuelve desde el area de preparacion</td>
+        </tr>
+        <tr>
+          <td>
+            <code>
+              <ol>
+                <li>$ git restore --staged archivo.txt</li>
+                <li>$ git restore archivo.txt</li>
+              </ol>
+            </code>
+          </td>
+          <td>Si esta en el area de preparacion</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <br />
+
+  <section class="mt-4">
+    <h3 class="text-secondary text-center">Checkout</h3>
+
+    <h5>
+      Restaura cambios realizados en el archivo desde el commit (no recomendado)
+    </h5>
+
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Comando</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$ git checkout archivo.txt</code></td>
+          <td>Si no lo subi al area de preparacion</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <br />
+
+  <section class="mt-4">
+    <h3 class="text-secondary text-center">Reset</h3>
+
+    <h5>Restaura el archivo hasta el ultimo commit subido</h5>
+
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Comando</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$ git reset --hard</code></td>
+          <td>Restaura archivo desde ulitmo commit</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <br />
+
+  <div class="text-end">
+    <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+  </div>
+</div>
