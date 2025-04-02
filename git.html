@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="container">
-        <h3 class="text-center">Indice</h3>
+        <h3 class="text-center" id="volverIndice">Indice</h3>
       
       <h4 class="mt-4 mb-3 text-primary fw-bold">Comandos Git</h4>
       <div class="list-group list-group-flush">
@@ -61,7 +61,7 @@
         </a>
         
         <a
-          href="#"
+          href="#Ramas"
           class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
         >
           <span>6. Ramas</span>
@@ -69,15 +69,15 @@
         </a>
         
         <a
-          href="#"
+          href="#Merge"
           class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
         >
-          <span>7. Fusionar ramas</span>
+          <span>7. Merge ramas</span>
           <i class="bi bi-code-square text-muted"></i>
         </a>
         
         <a
-          href="#"
+          href="#gitignore"
           class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
         >
           <span>8. .gitignore</span>
@@ -85,7 +85,7 @@
         </a>
         
         <a
-          href="#"
+          href="#Alias"
           class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
         >
           <span>9. Alias</span>
@@ -93,7 +93,7 @@
         </a>
         
         <a
-          href="#"
+          href="#Reflog"
           class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
         >
           <span>10. Git reflog</span>
@@ -237,7 +237,7 @@
         </section>
 
         <div class="text-end">
-          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
         </div>
       
       
@@ -364,7 +364,7 @@
         <br>
 
         <div class="text-end">
-          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
         </div>
       
       
@@ -400,7 +400,7 @@
           </table>
         </section>
         <div class="text-end">
-          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
         </div>
       </div>
       
@@ -486,7 +486,7 @@
       
       
         <div class="text-end">
-          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
         </div>
       </div>
       
@@ -624,9 +624,321 @@
         <br />
       
         <div class="text-end">
-          <a href="#volverIntroduccion" class="btn btn-primary">Volver al Índice</a>
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
         </div>
       </div>
+
+      <br />
+      
+      <hr class="border bg-primary w-90 mx-auto" style="height: 10px" />
+      
+      <br />
+
+      <div class="container mt-4" id="Ramas">
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Ramas</h3>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git branch</code></td>
+                <td>Lista de ramas y posicion</td>
+              </tr>
+              <tr>
+                <td><code>$ git branch (nombre-de-rama)</code></td>
+                <td>Crear rama</td>
+              </tr>
+              <tr>
+                <td><code>$ git switch (nombre-rama)</code></td>
+                <td>Mover entre ramas</td>
+              </tr>
+              <tr>
+                <td><code>$ git switch -c (nombre-rama)</code></td>
+                <td>Crear rama e ir a la misma</td>
+              </tr>
+              <tr>
+                <td><code>$ git branch -d (nombre-rama)</code></td>
+                <td>Para eliminar rama ¡¡¡NO DEBEMOS ESTAR DENTRO DE LA RAMA!!!</td>
+              </tr>
+              <tr>
+                <td><code>$ git branch -m (nombre-rama) (nombre-nuevo)</code></td>
+                <td>Cambiar nombre de rama desde otra rama</td>
+              </tr>
+              <tr>
+                <td><code>$ git branch -m (nombre-nuevo)</code></td>
+                <td>Para cambiar nombre de la rama actual</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <div class="text-end">
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      </div>
+      
+      <br />
+      
+      <hr class="border bg-primary w-90 mx-auto" style="height: 10px" />
+      
+      <br />
+
+      <div class="container mt-4" id="Merge">
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Merge ramas: fusiono ramas</h3>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git merge rama-a-fusionar</code></td>
+                <td>¡¡¡DEBO ESTAR EN LA RAMA DONDE SE FUSIONARA!!!</td>
+              </tr>
+              <tr>
+                <td>
+                  <code
+                    >$ git reset --hard (id de la rama antes que se fusione
+                    (master))</code
+                  >
+                </td>
+                <td>Para volver atras con la fusion</td>
+              </tr>
+              <tr>
+                <td>
+                  <code
+                    >$ git log --oneline --all --graph (me muestra los id de los
+                    commit de todas las ramas)</code
+                  >
+                </td>
+                <td>Para ver todos los id de commit (cuando estoy en rama master)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Merge conflicts</h3>
+      
+          <h5 class="text-center">
+            Suceden conflictos cuando modifico la rama master y la rama creada y las
+            quiero combinar
+          </h5>
+
+          <br />
+
+          <h6>Los conflicos se pueden manejar de dos formas:</h6>
+          <ol>
+            <li>Los manejo desde VSC</li>
+            <li>Utilizo merge editor</li>
+          </ol>
+
+          <br />
+      
+          <h6>Para guardar los cambios:</h6>
+      
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git merge --continue</code></td>
+                <td>Guardo los cambios</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <div class="text-end">
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      </div>
+      
+
+      <br />
+      
+      <hr class="border bg-primary w-90 mx-auto" style="height: 10px" />
+      
+      <br />
+
+      <div class="container mt-4" id="gitignore">
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">
+            gitignore: archivos que no se suben al commit
+          </h3>
+          <h5>Es una archivo llamado .gitignore</h5>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>*.txt</code></td>
+                <td>Ignora todos los archivos que son ".txt"</td>
+              </tr>
+              <tr>
+                <td><code>NombreCarpeta/</code></td>
+                <td>Ignora todos los archivos de dentro de una carpeta</td>
+              </tr>
+              <tr>
+                <td><code>!noIgnorar.txt</code></td>
+                <td>No lo ignora</td>
+              </tr>
+              <tr>
+                <td><code>$ git ls-tree -r --name-only (id o HEAD)</code></td>
+                <td>Muestra todos los archivos de un commit especifico</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">GIT IGNORE GLOBAL</h3>
+      
+          <ol>
+            <li>Lo utilizo para varios repositorios</li>
+            <li>Lo creo en cualquier ubicacion</li>
+          </ol>
+      
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code
+                    >$ git config --global core.excludesfile (ruta donde se encuentra
+                    el archivo global)</code
+                  >
+                </td>
+                <td>Git siempre me lo agrega</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <div class="text-end">
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      </div>
+      
+
+      <br />
+      
+      <hr class="border bg-primary w-90 mx-auto" style="height: 10px" />
+      
+      <br />
+
+      <div class="container mt-4" id="Alias">
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Alias: abrebviar comandos</h3>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code
+                    >$ git config --global alias.nombre-Alias "comando sin poner el
+                    git adelante"
+                  </code>
+                </td>
+                <td>Abrevio comandos</td>
+              </tr>
+              <tr>
+                <td><code>$ git config --global --unset alias.nombre_alias</code></td>
+                <td>Eliminar alias</td>
+              </tr>
+              <tr>
+                <td><code>$ git config --global --get alias.nombre_alias</code></td>
+                <td>
+                  Comprobar que se elimino correctamente (no deberia devolver nada)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+      
+        <div class="text-end">
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      </div>
+      
+
+      <div class="container mt-4" id="Reflog">
+        <section class="mt-4">
+          <h3 class="text-secondary text-center">Recuperar commits borrados</h3>
+          <h5>El commit no se borra como tal, solo su referencia</h5>
+          <h5>Relog me muestra el historial de todos los commits</h5>
+          <table class="table table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Comando</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$ git reflog</code></td>
+                <td>Me aparece todo el historial (apreto q para salir)</td>
+              </tr>
+              <tr>
+                <td><code>$ git reset --hard (id commit)</code></td>
+                <td>Recupera referencia del commit</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <br />
+        
+        <div class="text-end">
+          <a href="#volverIndice" class="btn btn-primary">Volver al Índice</a>
+        </div>
+      </div>
+
+
+
+      <br />
+      
+      <hr class="border bg-primary w-90 mx-auto" style="height: 10px" />
+      
+      <br />
 
 
     </div>
